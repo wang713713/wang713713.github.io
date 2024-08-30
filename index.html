@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,42 +7,94 @@
 	<link rel="icon" href="tb.jpg">
 	<style>
 		body {
-		    font-family: Arial, sans-serif;
+		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		    margin: 0;
 		    padding: 0;
-		    background-color: #f4f4f4;
+		    background-color: #f0f2f5;
+		    color: #333;
 		}
 		header {
-		    background-color: #333;
+		    background: linear-gradient(90deg, #007BFF, #00D4FF);
 		    color: #fff;
-		    padding: 10px 0;
+		    padding: 20px 0;
 		    text-align: center;
+		    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+		header h1 {
+		    margin: 0;
+		    font-size: 2.5em;
+		    font-weight: bold;
 		}
 		nav {
+		    background-color: #fff;
+		    padding: 10px 0;
+		    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		    position: sticky;
+		    top: 0;
+		    z-index: 1000;
 		    text-align: center;
-		    margin: 20px 0;
 		}
 		nav a {
 		    margin: 0 15px;
 		    text-decoration: none;
-		    color: #333;
+		    color: #007BFF;
 		    font-weight: bold;
+		    font-size: 1.1em;
+		    transition: color 0.3s;
+		}
+		nav a:hover {
+		    color: #0056b3;
 		}
 		section {
-		    max-width: 2000px;
-		    margin: 20px auto;
+		    max-width: 1000px;
+		    margin: 40px auto;
 		    padding: 20px;
 		    background-color: #fff;
-		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+		    border-radius: 8px;
+		}
+		section h2 {
+		    font-size: 2em;
+		    color: #007BFF;
+		    border-bottom: 2px solid #00D4FF;
+		    padding-bottom: 10px;
+		    margin-bottom: 20px;
+		}
+		section p, section ul {
+		    font-size: 1.1em;
+		    line-height: 1.6;
 		}
 		footer {
 		    background-color: #333;
 		    color: #fff;
 		    text-align: center;
-		    padding: 10px 0;
+		    padding: 15px 0;
 		    position: fixed;
 		    bottom: 0;
 		    width: 100%;
+		    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+		}
+		footer p {
+		    margin: 0;
+		    font-size: 0.9em;
+		}
+		.link-section {
+		    text-align: center;
+		    margin: 20px 0;
+		}
+		.link-section a {
+		    display: inline-block;
+		    margin: 10px;
+		    padding: 10px 15px;
+		    background-color: #007BFF;
+		    color: #fff;
+		    border-radius: 5px;
+		    text-decoration: none;
+		    transition: background-color 0.3s, transform 0.3s;
+		}
+		.link-section a:hover {
+		    background-color: #0056b3;
+		    transform: scale(1.05);
 		}
 	</style>
 </head>
@@ -56,35 +107,34 @@
 		<a href="#about">关于我</a>
 		<a href="#music">音乐分享</a>
 		<a href="#contact">联系我</a>
-		<div>------<a href="https://wangweb.us.kg/yqlj" target="_blank">友情链接</a>------</div>
-		
+		<div class="link-section">
+		    ------<a href="https://wangweb.us.kg/yqlj" target="_blank">友情链接</a>------
+		</div>
 	</nav>
 	<section id="home">
 		<h2>主页</h2>
 		<p>在这里分享一些东西：</p>
-		<div>2024/8/20：<a href="https://wwra.lanzoub.com/iXhOA28bzggj" target="_blank">机械动力mods（永久有效,包含了一些1.20.1forge机械动力的mods，和一些优化模组）</a> </div>
+		<div>2024/8/20：<a href="https://wwra.lanzoub.com/iXhOA28bzggj" target="_blank">机械动力mods（永久有效, 包含了一些1.20.1forge机械动力的mods，和一些优化模组）</a> </div>
 		<p>..........敬请期待..........</p>
 	</section>
 	<section id="about">
 		<h2>关于我</h2>
-		<p>一个普普通通的minecraft玩家..........minecraft万岁</p>
+		<p>一个普普通通的Minecraft玩家..........Minecraft万岁</p>
 		<p>（有人玩EC的话可以加下我哦...）</p>
 		<p>冈易启动器账号：_唯我独尊_cn</p>
 	</section>
 	<section id="music">
 		<h2>音乐分享</h2>
-		<p>感谢网易云音乐和bilibili的外链播放功能
-		<p>
-			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=4010201&auto=1&height=66"></iframe>
+		<p>感谢网易云音乐和bilibili的外链播放功能</p>
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=4010201&auto=1&height=66"></iframe>
 	</section>
 	<section id="contact">
 		<h2>联系我</h2>
 		<p>如果你想联系我，可以通过以下方式：</p>
 		<ul>
-			<a href="mailto:email@wangweb.us.kg">我的邮箱：email@wangweb.us.kg</a>
+			<li><a href="mailto:email@wangweb.us.kg">我的邮箱：email@wangweb.us.kg</a></li>
 		</ul>
-      <p>.(哎呦，这个彩蛋都被你找到了)</p>
-      
+		<p>.(哎呦，这个彩蛋都被你找到了)</p>
 	</section>
 	<footer>
 		<p>&copy; 2024 _唯我独尊_cn. 保留所有权利。</p>
