@@ -1,0 +1,17 @@
+body {  
+    font-family: Arial, sans-serif;  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    padding-top: 50px;  
+}  
+  
+#login, #passwordBook {  
+    text-align: center;  
+    margin-bottom: 20px;  
+}  
+  
+#passwordBook textarea {  
+    width: 300px;  
+    height: 150px;  
+}
