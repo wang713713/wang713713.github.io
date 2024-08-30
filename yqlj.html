@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,84 +19,135 @@
         h1 {
             color: #333;
             margin-top: 50px;
+            font-size: 36px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .links-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 20px;
-            padding: 20px;
+            margin: 30px 20px;
+            padding: 30px;
             background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
             max-width: 1200px;
         }
 
         .link-item {
             width: 300px;
-            margin: 10px;
+            margin: 15px;
             padding: 20px;
             background-color: #e8e8e8;
-            border-radius: 5px;
+            border-radius: 10px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            cursor: pointer;
         }
 
         .link-item:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
         }
 
         .link-item a {
             text-decoration: none;
             color: #007BFF;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 20px;
+            transition: color 0.3s ease;
         }
 
         .link-item a:hover {
+            color: #0056b3;
             text-decoration: underline;
+        }
+
+        /* 真正的彩蛋，隐藏在背景中的一个点 */
+        .hidden-egg {
+            display: none;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #ff0000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 鼠标在特定区域（比如某个角落）触发彩蛋 */
+        .link-item:hover .hidden-trigger {
+            opacity: 1;
+        }
+
+        .hidden-trigger {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .hidden-trigger:hover + .hidden-egg {
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <h1>友情链接：</h1>
+    <h1>友情链接</h1>
 
     <div class="links-container">
         <div class="link-item">
-            <a href="https://www.bilibili.com" target="_blank">哔哩哔哩bilibili</a>
+            <a href="https://www.bilibili.com" target="_blank">哔哩哔哩 bilibili</a>
+            <div class="hidden-trigger"></div>
         </div>
         <div class="link-item">
             <a href="https://www.baidu.com" target="_blank">度娘</a>
+            <div class="hidden-trigger"></div>
+            <div class="hidden-egg">恭喜找到彩蛋！</div>
         </div>
         <div class="link-item">
-            <a href="https://www.bing.com" target="_blank">必应（很好用的搜索引擎，反正广告比度娘少）</a>
+            <a href="https://www.bing.com" target="_blank">必应（广告比度娘少）</a>
+            <div class="hidden-trigger"></div>
         </div>
         <div class="link-item">
-            <a href="https://mc.163.com/" target="_blank">网易版minecraft官网</a>
+            <a href="https://mc.163.com/" target="_blank">网易版 Minecraft 官网</a>
+            <div class="hidden-trigger"></div>
         </div>
         <div class="link-item">
-            <a href="https://www.minecraft.net/zh-hans" target="_blank">国际版minecraft官网</a>
+            <a href="https://www.minecraft.net/zh-hans" target="_blank">国际版 Minecraft 官网</a>
+            <div class="hidden-trigger"></div>
         </div>
         <div class="link-item">
-            <a href="https://zh.minecraft.wiki/" target="_blank">minecraft wiki官网</a>
+            <a href="https://zh.minecraft.wiki/" target="_blank">Minecraft Wiki 官网</a>
+            <div class="hidden-trigger"></div>
+            <div class="hidden-egg">这是一个隐藏彩蛋！</div>
         </div>
         <div class="link-item">
-            <a href="https://www.chunkbase.com/" target="_blank">chunkbase官网</a>
+            <a href="https://www.chunkbase.com/" target="_blank">Chunkbase 官网</a>
+            <div class="hidden-trigger"></div>
         </div>
         <div class="link-item">
             <a href="https://www.mcmod.cn/" target="_blank">MC百科</a>
+            <div class="hidden-trigger"></div>
+        </div>
+        <div class="link-item">
+            <a href="https://github.com" target="_blank">github</a>
+            <div class="hidden-trigger"></div>
         </div>
         <div class="link-item">
             <a href="https://wangweb.us.kg/" target="_blank">返回首页</a>
         </div>
         <div class="link-item">
-            <a href="mailto:email@wangweb.us.kg">如果你有你的网站可以找站长投稿o~（点击投稿）</a>
+            <a href="mailto:email@wangweb.us.kg">点击投稿你的网站...</a>
         </div>
-        <!-- 继续添加更多链接项 -->
     </div>
-<!-- 彩蛋 --！>
 </body>
 </html>
