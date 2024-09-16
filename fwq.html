@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft 服务器状态检测</title>
+    
+    <!-- 设置 tb.jpg 为网站图标 -->
+    <link rel="icon" href="tb.jpg" type="image/jpeg">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minecraft 服务器状态检测</h1>
+
+    <label for="server-ip">请输入服务器 IP 地址：</label>
+    <input type="text" id="server-ip" placeholder="例如：play.example.com">
+    <button onclick="checkServerStatus()">检测状态</button>
+
+    <div id="status"></div>
+
+    <script>
+        async function checkServerStatus() {
+            const serverIP = document.getElementById('server-ip').value;
+            const statusDiv = document.getElementById('status');
+
+            if (!serverIP) {
+                statusDiv.textContent = "请输入服务器 IP 地址。";
+                return;
+            }
+
+            statusDiv.textContent = "正在检测...";
+
+            try {
+                const response = await fetch(`https://api.mcstatus.io/v1/status/java/${serverIP}`);
+                const data = await response.json();
+
+                if (data.online) {
+                    statusDiv.textContent = `服务器在线，当前有 ${data.players.online} 名玩家在线。`;
+                } else {
+                    statusDiv.textContent = "服务器不在线。";
+                }
+            } catch (error) {
+                statusDiv.textContent = "获取服务器状态时出错。";
+                console.error("错误:", error);
+            }
+        }
+    </script>
+</body>
+</html>
