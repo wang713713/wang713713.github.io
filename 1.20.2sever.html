@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的世界服务器状态</title>
+    <title>生电服务器状态</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -58,15 +58,30 @@
             max-width: 200px;
             margin-left: auto;
             margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .player-list li:nth-child(even) {
             background-color: #2980b9;
+        }
+        .player-list li.gold {
+            background-color: #f39c12;
+            color: #fff;
         }
         .footer {
             text-align: center;
             margin-top: 50px;
             color: #aaa;
             font-size: 14px;
+        }
+        .player-list .admin-tag {
+            font-size: 14px;
+            color: #fff;
+            background-color: #e74c3c;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 10px;
         }
     </style>
     <script>
@@ -96,7 +111,12 @@
                         if (filteredPlayers.length > 0) {
                             let playerListHTML = '<h3>在线玩家：</h3><ul>';
                             filteredPlayers.forEach(player => {
-                                playerListHTML += `<li>${player.name_clean}</li>`;
+                                if (player.name_clean === 'xbcy') {
+                                    // 给xbcy玩家添加特殊样式和"腐竹"标识
+                                    playerListHTML += `<li class="gold">${player.name_clean} <span class="admin-tag">腐竹</span></li>`;
+                                } else {
+                                    playerListHTML += `<li>${player.name_clean}</li>`;
+                                }
                             });
                             playerListHTML += '</ul>';
                             playerListContainer.innerHTML = playerListHTML;
@@ -137,7 +157,7 @@
 
     <!-- 页脚 -->
     <div class="footer">
-        <p>© 2024 我的世界服务器. 版权所有。</p>
+        <p>腐竹wechatID：wxid_sb8esbobdf4422（快去骚扰他）</p>
     </div>
 
 </body>
