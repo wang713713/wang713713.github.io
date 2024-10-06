@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生电服务器状态</title>
+    <title>1.20.2生电服务器状态</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -104,15 +104,15 @@
                             <p>服务器 MOTD：<strong>${data.motd.clean}</strong></p>
                         `;
 
-                        // 过滤掉匿名玩家 "Anonymous Player"
-                        const filteredPlayers = data.players.list.filter(player => player.name_clean !== 'Anonymous Player');
+                        // 过滤掉名字以 "_jr" 结尾的玩家
+                        const filteredPlayers = data.players.list.filter(player => !player.name_clean.endsWith('_jr'));
 
                         // 显示玩家列表
                         if (filteredPlayers.length > 0) {
                             let playerListHTML = '<h3>在线玩家：</h3><ul>';
                             filteredPlayers.forEach(player => {
                                 if (player.name_clean === 'xbcy') {
-                                    // 给xbcy玩家添加特殊样式和"腐竹"标识
+                                    // 给 xbcy 玩家添加特殊样式和 "腐竹" 标识
                                     playerListHTML += `<li class="gold">${player.name_clean} <span class="admin-tag">腐竹</span></li>`;
                                 } else {
                                     playerListHTML += `<li>${player.name_clean}</li>`;
