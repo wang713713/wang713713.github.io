@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的世界服务器 - 实时状态</title>
+    <title>1.20.2服务器 - 实时状态</title>
     <style>
-        /* 保持之前的CSS样式 */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -61,15 +60,13 @@
     </style>
     <script>
         function fetchServerStatus() {
-            const serverIp = "play.simpfun.cn"; // 替换为你的服务器 IP
-            const serverPort = "12725";         // 替换为你的服务器端口
-            const apiUrl = `http://api.minetools.eu/ping/${serverIp}/${serverPort}`;
+            const apiUrl = `http://your_mss_server_ip:your_port/api/status?ip=play.simpfun.cn&port=12725`;
 
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
                     const statusContainer = document.getElementById('server-status');
-                    if (data.description) {
+                    if (data.status === "online") {
                         statusContainer.innerHTML = `
                             <p>服务器状态：在线</p>
                             <p>当前在线人数：${data.players.online} / ${data.players.max}</p>
