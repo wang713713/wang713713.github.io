@@ -98,10 +98,10 @@
                         // 显示服务器状态和基本信息
                         statusContainer.innerHTML = `
                             <h2>服务器状态</h2>
-                            <h2>服务器地址：play.simpfun.cn:12725</h2>
+                            <h2>地址：play.simpfun.cn:12725</h2>
                             <p>服务器状态：<strong>在线</strong></p>
                             <p>服务器版本：<strong>${data.version.name_clean}</strong></p>
-                            <p>当前在线人数：<strong>${data.players.online} / ${data.players.max}</strong>（未过滤掉假人）</p>
+                            <p>当前在线人数：<strong>${data.players.online} / ${data.players.max}</strong>（未过滤假人）</p>
                             <p>服务器 MOTD：<strong>${data.motd.clean}</strong></p>
                         `;
 
@@ -110,7 +110,7 @@
 
                         // 显示玩家列表
                         if (filteredPlayers.length > 0) {
-                            let playerListHTML = '<h3>在线玩家：（已过滤掉假人）</h3><ul>';
+                            let playerListHTML = '<h3>在线玩家：（已过滤假人）</h3><ul>';
                             filteredPlayers.forEach(player => {
                                 if (player.name_clean === 'xbcy') {
                                     // 给 xbcy 玩家添加特殊样式和 "腐竹" 标识
@@ -122,7 +122,7 @@
                             playerListHTML += '</ul>';
                             playerListContainer.innerHTML = playerListHTML;
                         } else {
-                            playerListContainer.innerHTML = '<p>目前没有玩家在线。（已过滤掉假人）</p>';
+                            playerListContainer.innerHTML = '<p>目前没有玩家在线。（已过滤假人）</p>';
                         }
 
                     } else {
