@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WindowsXP</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #010101;
+        }
+
+        .container {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            flex-direction: column;
+            color: #ffffff;
+        }
+
+        .logo .text {
+            display: inline-flex;
+            flex-direction: column;
+        }
+
+        .logo .text .microsoft {
+            font-size: 1.2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo .text .microsoft .reg {
+            position: absolute;
+            font-size: 0.75rem;
+            margin-left: 2px;
+            top: 2px;
+        }
+
+        .logo .text .windows {
+            font-size: 4rem;
+            font-weight: 600;
+            position: relative;
+            padding-right: 3.5rem;
+            line-height: 0.75;
+        }
+
+        .logo .text .windows .xp {
+            font-size: 2.7rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding-left: 0.5rem;
+            color: #f76310;
+        }
+
+        .logo .text .windows .xp .reg {
+            font-size: 0.75rem;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 2px;
+            margin: auto;
+            line-height: 3.4;
+            color: #ffffff;
+        }
+
+        .logo .text .professional {
+            text-indent: 0.6rem;
+            font-size: 2.6rem;
+            text-transform: capitalize;
+        }
+
+        .logo .loader {
+            height: 1rem;
+            border: 1px solid;
+            width: 10.5rem;
+            position: relative;
+            left: 4rem;
+            margin-top: 3rem;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .logo .loader span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            left: 100px;
+            bottom: 0;
+            height: 75%;
+            width: 0.8rem;
+            background-image: linear-gradient(#c8cdf4, #4958da);
+            border-radius: 2px;
+            animation: loading 2.5s linear infinite;
+        }
+
+        .logo .loader span::before,
+        .logo .loader span::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 100%;
+            width: 0.8rem;
+            background-image: inherit;
+            display: inline-block;
+            border-radius: inherit;
+        }
+
+        .logo .loader span::before {
+            left: -1rem;
+        }
+
+        .logo .loader span::after {
+            right: -1rem;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: translateX(-10rem);
+            }
+
+            100% {
+                transform: translateX(6rem);
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="logo">
+        <div class="text">
+
+				<span class="microsoft">
+					Microsoft
+					<span class="reg">&reg;</span>
+				</span>
+
+            <span class="windows">
+					Windows
+					<span class="xp">
+						<span class="reg">&reg;</span>
+						xp
+					</span>
+				</span>
+
+            <span class="professional">
+					professional
+				</span>
+
+        </div>
+        <div class="loader">
+            <span></span>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
